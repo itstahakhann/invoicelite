@@ -1,2 +1,59 @@
-# invoicelite
-A clean and professional invoice generator built with HTML, CSS, and vanilla JavaScript. Create invoices, calculate totals, and print or save them as PDF.
+# InvoiceLite
+
+A clean and professional invoice generator built with HTML, CSS, vanilla JavaScript, and Electron.
+
+InvoiceLite allows users to create professional invoices by entering business information, customer details, products or services, taxes, discounts, and other invoice information.
+
+## Features
+
+- Create professional invoices
+- Add unlimited invoice items
+- Add products or services
+- Enter quantity and unit price
+- Automatic item calculations
+- Automatic subtotal calculation
+- Tax calculation
+- Discount calculation
+- Multiple currency options
+- Business information
+- Customer information
+- Invoice number and dates
+- Custom logo upload
+- Live invoice preview
+- Print invoices
+- Save invoices as PDF using the browser/system print dialog
+- Responsive interface
+- LocalStorage support
+- Clear invoice functionality
+- Windows desktop application with Electron
+
+## Tech Stack
+
+- HTML5
+- CSS3
+- JavaScript
+- Electron
+- Electron Builder
+- LocalStorage
+- Browser Print API
+
+## How It Works
+
+InvoiceLite follows a simple workflow:
+
+```text
+Enter Business Details
+        ↓
+Enter Customer Details
+        ↓
+Add Products / Services
+        ↓
+Set Quantity & Price
+        ↓
+Add Tax / Discount
+        ↓
+Automatic Calculations
+        ↓
+Live Invoice Preview
+        ↓
+Print / Save as PDF

@@ -168,31 +168,6 @@ npm start
 ```
 
 ---
-
-## 📦 Build a Release
-
-InvoiceLite uses **Electron Builder** to create the Windows installer.
-
-Run:
-
-```bash
-npm run build
-```
-
-The generated release files will be placed inside:
-
-```text
-dist/
-```
-
-The installer will be similar to:
-
-```text
-InvoiceLite Setup 1.0.0.exe
-```
-
----
-
 ## 📁 Project Structure
 
 ```text

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InvoiceLite · Invoice Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="app-header">
+  <div class="logo">Invoice<span>Lite</span></div>
+  <div class="header-actions">
+    <button id="previewBtn" class="btn btn-secondary" type="button">Preview</button>
+    <button id="printBtn" class="btn btn-primary" type="button">Print Invoice</button>
+  </div>
+</header>
+
+<main class="app-main">
+  <section class="editor-panel">
+
+    <!-- BUSINESS -->
+    <div class="card">
+      <h2 class="card-title">Business Information</h2>
+      <div class="field-grid">
+        <div class="field">
+          <label for="bizName">Business Name</label>
+          <input type="text" id="bizName" placeholder="Taha Digital">
+        </div>
+        <div class="field">
+          <label for="bizEmail">Email</label>
+          <input type="email" id="bizEmail" placeholder="hello@tahadigital.com">
+        </div>
+        <div class="field">
+          <label for="bizPhone">Phone</label>
+          <input type="text" id="bizPhone" placeholder="+92 300 1234567">
+        </div>
+        <div class="field">
+          <label for="bizAddress">Address</label>
+          <input type="text" id="bizAddress" placeholder="Karachi, Pakistan">
+        </div>
+        <div class="field field-full">
+          <label for="logoInput">Logo</label>
+          <input type="file" id="logoInput" accept="image/*" class="file-input">
+          <div class="logo-preview-wrapper">
+            <img id="logoPreview" class="logo-preview" src="assets/logo-placeholder.svg" alt="Business logo">
+            <button type="button" id="removeLogoBtn" class="btn btn-tiny">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CUSTOMER -->
+    <div class="card">
+      <h2 class="card-title">Customer Information</h2>
+      <div class="field-grid">
+        <div class="field">
+          <label for="custName">Customer Name</label>
+          <input type="text" id="custName" placeholder="ABC Company">
+        </div>
+        <div class="field">
+          <label for="custEmail">Email</label>
+          <input type="email" id="custEmail" placeholder="client@abccompany.com">
+        </div>
+        <div class="field">
+          <label for="custPhone">Phone</label>
+          <input type="text" id="custPhone" placeholder="+92 321 7654321">
+        </div>
+        <div class="field">
+          <label for="custAddress">Address</label>
+          <input type="text" id="custAddress" placeholder="Lahore, Pakistan">
+        </div>
+      </div>
+    </div>
+
+    <!-- INVOICE DETAILS -->
+    <div class="card">
+      <h2 class="card-title">Invoice Details</h2>
+      <div class="field-grid">
+        <div class="field">
+          <label for="invNumber">Invoice Number</label>
+          <input type="text" id="invNumber" value="INV-001">
+        </div>
+        <div class="field">
+          <label for="invDate">Invoice Date</label>
+          <input type="date" id="invDate">
+        </div>
+        <div class="field">
+          <label for="dueDate">Due Date</label>
+          <input type="date" id="dueDate">
+        </div>
+        <div class="field">
+          <label for="currencySelect">Currency</label>
+          <select id="currencySelect">
+            <option value="$|USD">USD ($)</option>
+            <option value="€|EUR">EUR (€)</option>
+            <option value="£|GBP">GBP (£)</option>
+            <option value="₨|PKR">PKR (₨)</option>
+            <option value="د.إ|AED">AED (د.إ)</option>
+            <option value="﷼|SAR">SAR (﷼)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- ITEMS -->
+    <div class="card">
+      <h2 class="card-title">Items</h2>
+      <div id="itemsContainer" class="items-container"></div>
+      <button id="addItemBtn" class="btn btn-secondary btn-block" type="button">+ Add Item</button>
+    </div>
+
+    <!-- TAX / DISCOUNT -->
+    <div class="card">
+      <h2 class="card-title">Tax / Discount</h2>
+      <div class="field-grid">
+        <div class="field">
+          <label for="taxRate">Tax (%)</label>
+          <input type="number" id="taxRate" value="0" min="0" step="0.01">
+        </div>
+        <div class="field">
+          <label for="discountRate">Discount (%)</label>
+          <input type="number" id="discountRate" value="0" min="0" step="0.01">
+        </div>
+      </div>
+    </div>
+
+    <!-- CLEAR -->
+    <div class="card clear-card">
+      <button id="clearInvoiceBtn" class="btn btn-danger btn-block" type="button">Clear Invoice</button>
+    </div>
+
+  </section>
+
+  <section class="preview-panel">
+    <div class="preview-inner" id="invoicePreview"></div>
+  </section>
+</main>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

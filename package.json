@@ -1,0 +1,39 @@
+{
+  "name": "invoicelite",
+  "version": "1.0.0",
+  "description": "A simple and professional invoice generator",
+  "main": "main.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^38.8.6",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+  "appId": "com.invoicelite.app",
+  "productName": "InvoiceLite",
+  "icon": "assets/invoicelite.ico",
+  "files": [
+    "index.html",
+    "main.js",
+    "css/**/*",
+    "js/**/*",
+    "assets/**/*",
+    "package.json"
+  ],
+  "win": {
+    "target": "nsis",
+    "icon": "assets/invoicelite.ico"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "InvoiceLite"
+  }
+}
+}
